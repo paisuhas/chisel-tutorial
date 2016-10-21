@@ -8,7 +8,13 @@ class LFSR16 extends Module {
     val out = UInt(OUTPUT, 16)
   }
   // COMPUTE LFSR16 HERE
-  io.out := UInt(0)
+  val lfsr = Reg(init = UInt(1, 16))
+  when (io.inc) {
+    val shift_in = (lfsr(0) ^ lfsr(2) ^ lfsr(3) ^ lfsr(5))
+    lfsr := Cat(shift_in, lfsr(15, 1))
+  }
+
+  io.out := lfsr
 }
 
 class LFSR16Tests(c: LFSR16) extends Tester(c) {
