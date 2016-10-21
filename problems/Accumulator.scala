@@ -9,7 +9,9 @@ class Accumulator extends Module {
   }
   // COUNT INCOMING TRUES
   // FILL IN HERE ...
-  io.out := UInt(0)
+  val acc = Reg(init = UInt(0, width = 8))
+  acc := io.in + acc
+  io.out := acc
 }
 
 class AccumulatorTests(c: Accumulator) extends Tester(c) {
