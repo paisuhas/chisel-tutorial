@@ -1,5 +1,6 @@
 SBT          ?= sbt
 SBT_FLAGS    ?= -Dsbt.log.noformat=true
+SHELL=/bin/bash
 
 # Don't use any built-in rules.
 MAKEFLAGS += --no-builtin-rules
