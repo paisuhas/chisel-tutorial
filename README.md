@@ -1,4 +1,4 @@
-Chisel Tutorials
+Solutions to Chisel Tutorial Problems
 ================
 
 These are the tutorials for [Chisel](https://github.com/ucb-bar/chisel).
